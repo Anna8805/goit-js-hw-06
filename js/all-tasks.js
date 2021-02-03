@@ -86,7 +86,7 @@ console.log(getUsersWithAge(users, 30, 40));
 
 
 const calculateTotalBalance = users => {
-  const sum = users.reduce((acc, user) => acc + user.balance,0);
+  const sum = users.reduce((acc, user) => acc + user.balance, 0);
 
   return sum;
 };
@@ -113,7 +113,8 @@ console.log(getUsersWithFriend(users, 'Goldie Gentry')); // [ 'Elma Head', 'Sher
 
 
 const getNamesSortedByFriendsCount = users => {
-  const namesFriends = users
+  const copy = [...users];
+  const namesFriends = copy
   .sort((prev, next) => prev.friends.length - next.friends.length)
   .map(user => user.name);
 
